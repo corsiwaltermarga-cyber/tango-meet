@@ -17,7 +17,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-          TABLE:i matches
+          TABLE: matches
         run: |
           status=$(curl -s -o /tmp/out.txt -w "%{http_code}" \
             "$SUPABASE_URL/rest/v1/$TABLE?select=*&limit=1" \
