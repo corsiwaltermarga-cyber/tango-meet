@@ -1,11 +1,11 @@
 name: Supabase Keepalive
 
 # Prevents the Supabase free-tier project from being paused after 7 days
-# of database inactivity. Runs a trivial read query three times a week.
+# of database inactivity. Runs a trivial read query four times a day.
 
 on:
   schedule:
-    - cron: '17 6 * * 1,3,5'   # Mondays, Wednesdays, and Fridays, 06:17 UTC
+    - cron: '17 0,6,12,18 * * *'   # every 6 hours at :17 past - 00:17, 06:17, 12:17, 18:17 UTC
   workflow_dispatch:          # allows manual runs from the Actions tab
 
 jobs:
